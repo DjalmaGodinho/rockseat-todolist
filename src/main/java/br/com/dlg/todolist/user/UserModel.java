@@ -2,7 +2,10 @@ package br.com.dlg.todolist.user;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.CurrentTimestamp;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Data
@@ -20,4 +23,7 @@ public class UserModel {
     private String name;
 
     private String password;
+
+    @CreationTimestamp
+    private LocalDateTime createAt;
 }
